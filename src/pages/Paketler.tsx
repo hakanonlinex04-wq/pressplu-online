@@ -1,4 +1,5 @@
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion';
+
 import { CheckCircle2, XCircle, Star, Zap, MessageCircle, Tv2, Smartphone, Users, Trophy, Loader2 } from 'lucide-react';
 import React, { useState } from 'react';
 import { siteConfig } from '../siteSettings';

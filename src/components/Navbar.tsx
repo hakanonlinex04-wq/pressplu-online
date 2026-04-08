@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { motion } from 'motion';
+
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';

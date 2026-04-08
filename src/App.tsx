@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion } from 'motion';
 import { siteConfig } from './siteSettings';
 
 // Components
@@ -17,18 +17,19 @@ import Iletisim from './pages/Iletisim';
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-[#0e0e0e] text-white selection:bg-[#ffe792] selection:text-black">
+      <div className="min-h-screen bg-[#0e0e0e] text-white selection:bg-[#ffe792] selection:text-black flex flex-col">
         <Navbar />
         
-        <Routes>
-          {/* Default and Ana Sayfa routes point to the same professional page */}
-          <Route path="/" element={<AnaSayfa />} />
-          <Route path="/ana-sayfa" element={<AnaSayfa />} />
-          <Route path="/kanal-listesi" element={<KanalListesi />} />
-          <Route path="/paketler" element={<Paketler />} />
-          <Route path="/kurulum" element={<Kurulum />} />
-          <Route path="/iletisim" element={<Iletisim />} />
-        </Routes>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<AnaSayfa />} />
+            <Route path="/ana-sayfa" element={<AnaSayfa />} />
+            <Route path="/kanal-listesi" element={<KanalListesi />} />
+            <Route path="/paketler" element={<Paketler />} />
+            <Route path="/kurulum" element={<Kurulum />} />
+            <Route path="/iletisim" element={<Iletisim />} />
+          </Routes>
+        </main>
         
         <Footer />
 
