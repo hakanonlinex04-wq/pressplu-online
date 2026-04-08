@@ -1,9 +1,6 @@
-import { config } from '../App';
 import { siteConfig } from '../siteSettings';
-
-
-
-
+import { Link } from 'react-router-dom';
+import { Globe, Shield, CreditCard } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="w-full py-12 px-8 bg-surface-container-low border-t border-outline-variant/10 flex flex-col items-center gap-6 text-center">
