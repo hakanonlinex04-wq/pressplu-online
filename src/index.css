@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-background: var(--bg-color);
+  --color-primary: var(--primary-color);
+  --color-primary-container: var(--primary-container-color);
+  --color-surface: var(--surface-color);
+  --color-surface-container-low: var(--surface-low);
+  --color-surface-container-high: var(--surface-high);
+  --color-surface-container-highest: var(--surface-highest);
+  --color-on-surface: var(--text-color);
+  --color-on-surface-variant: var(--text-variant);
+  --color-outline-variant: var(--outline-color);
+  --color-tertiary-container: var(--tertiary-color);
+}
+
+:root {
+  /* Permanent Cinematic Dark Theme */
+  --bg-color: #0e0e0e;
+  --primary-color: #ffe792;
+  --primary-container-color: #ffd709;
+  --surface-color: #0e0e0e;
+  --surface-low: #131313;
+  --surface-high: #201f1f;
+  --surface-highest: #262626;
+  --text-color: #ffffff;
+  --text-variant: #adaaaa;
+  --outline-color: #484847;
+  --tertiary-color: #def76f;
+  
+  --glass-bg: rgba(32, 31, 31, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-container-color) 100%);
+}
+
+.glass-overlay {
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Premium Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color); 
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-container-color); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color); 
+}
