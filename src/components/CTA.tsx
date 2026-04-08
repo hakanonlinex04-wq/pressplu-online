@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { motion } from 'motion';
+
 import { Bolt, Mail, MessageCircle, HelpCircle } from 'lucide-react';
 
 export default function CTA() {

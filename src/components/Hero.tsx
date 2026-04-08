@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { motion } from 'motion';
+
 import { useRef, useEffect } from 'react';
 
 export default function Hero() {
