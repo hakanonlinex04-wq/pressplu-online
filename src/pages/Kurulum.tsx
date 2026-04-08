@@ -1,8 +1,6 @@
 import { motion } from 'motion/react';
 import { Tv, Smartphone, Monitor, Tablet, Download, Wifi, CheckCircle, MessageCircle } from 'lucide-react';
-import { config } from '../App';
-
-
+import { siteConfig } from '../siteSettings';
 
 const devices = [
   { icon: Tv, label: 'Smart TV', desc: 'Samsung, LG, Sony ve diğer tüm Smart TV modelleri', steps: ['Smart TV ayarlarına girin', 'IPTV uygulamasını indirin (IPTV Smarters Pro)', 'Size gönderilen M3U linkini girin', 'İzlemeye başlayın!'] },
@@ -116,8 +114,7 @@ export default function Kurulum() {
         <h3 className="text-2xl font-headline font-extrabold mb-2">Yardım mı lazım?</h3>
         <p className="text-on-surface-variant mb-6">Ekibimiz kurulum sürecinde sizi adım adım yönlendirmeye hazır.</p>
         <a
-          href={`${config.whatsappLink}&text=Merhaba, kurulum konusunda yardım almak istiyorum`}
-
+          href={`${siteConfig.whatsappLink}&text=Merhaba, kurulum konusunda yardım almak istiyorum`}
           target="_blank" rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold px-8 py-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.3)]"
         >

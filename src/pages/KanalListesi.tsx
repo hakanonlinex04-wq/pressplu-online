@@ -1,9 +1,7 @@
 import { motion } from 'motion/react';
 import { Search, Globe, Trophy, Film, Music, Newspaper, Baby, Tv } from 'lucide-react';
 import { useState } from 'react';
-import { config } from '../App';
-
-
+import { siteConfig } from '../siteSettings';
 
 const categories = [
   { icon: Trophy, label: 'Spor', color: '#ef4444' },
@@ -46,6 +44,7 @@ const channels = [
   { name: 'Eurosport 1', cat: 'Spor', flag: '🌍', hd: true },
   { name: 'Eurosport 2', cat: 'Spor', flag: '🌍', hd: true },
   { name: 'NBA TV', cat: 'Spor', flag: '🇺🇸', hd: true },
+  { name: '4K Sports', cat: 'Spor', flag: '🌍', hd: true },
 ];
 
 export default function KanalListesi() {
@@ -137,13 +136,12 @@ export default function KanalListesi() {
       >
         <p className="text-on-surface-variant mb-4 text-lg">Bu sadece bir önizlemedir. <strong className="text-on-surface">1200+</strong> kanalın tamamına erişmek için hemen başlayın!</p>
         <a
-          href={config.whatsappLink}
+          href={siteConfig.whatsappLink}
           target="_blank" rel="noopener noreferrer"
           className="gold-gradient text-black font-extrabold px-8 py-3 rounded-xl inline-block"
         >
           Tüm Kanallara Eriş →
         </a>
-
       </motion.div>
     </div>
   );

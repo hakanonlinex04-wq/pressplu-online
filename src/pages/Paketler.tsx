@@ -1,9 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
 import { CheckCircle2, XCircle, Star, Zap, MessageCircle, Tv2, Smartphone, Users, Trophy, Loader2 } from 'lucide-react';
 import React, { useState } from 'react';
-import { config } from '../App';
-
-
+import { siteConfig } from '../siteSettings';
 
 function TiltCard({ children, className, featured }: any) {
   const x = useMotionValue(0);
@@ -261,7 +259,7 @@ export default function Paketler() {
               </ul>
 
               <motion.a
-                href={config.whatsappLink}
+                href={siteConfig.whatsappLink}
                 target="_blank" rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 rounded-xl font-extrabold transition-all text-center block ${
@@ -310,7 +308,7 @@ export default function Paketler() {
           <h3 className="text-2xl font-headline font-extrabold mb-2">Hâlâ kararsız mısınız?</h3>
           <p className="text-on-surface-variant mb-6">Uzman ekibimiz size en uygun paketi seçmenize yardımcı olsun.</p>
           <a
-            href="https://wa.me/905397112794?text=Merhaba"
+            href={siteConfig.whatsappLink}
             target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold px-8 py-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.3)]"
           >

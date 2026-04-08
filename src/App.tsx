@@ -9,18 +9,7 @@ import Footer from './components/Footer';
 import { MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
-
-// MERKEZİ AYARLAR (Buradan değiştirebilirsiniz)
-export const config = {
-  brandName: 'EkspressPlus TV',
-  whatsappNumber: '905397112794',
-  whatsappLink: 'https://wa.me/905397112794?text=Merhaba',
-  contactEmail: 'destek@pressplus.online',
-  socialMedia: {
-    instagram: '#',
-    telegram: '#',
-  }
-};
+import { siteConfig } from './siteSettings';
 
 import AnaSayfa from './pages/AnaSayfa';
 import KanalListesi from './pages/KanalListesi';
@@ -66,13 +55,13 @@ export default function App() {
           animate={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
           className="fixed bottom-6 right-6 z-[100] bg-surface-container-high text-primary rounded-full w-16 h-16 flex items-center justify-center shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:bg-[#25D366] hover:text-white transition-all group"
-          href={config.whatsappLink}
+          href={siteConfig.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
         >
           <MessageCircle className="w-8 h-8" />
           <span className="absolute right-20 bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            {config.brandName} Destek - 7/24 Aktif
+            {siteConfig.brandName} Destek - 7/24 Aktif
           </span>
         </motion.a>
       </div>

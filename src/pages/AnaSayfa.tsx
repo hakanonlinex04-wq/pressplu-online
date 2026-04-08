@@ -2,9 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useSpring, useTransform } from 'motion/react';
 import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { config } from '../App';
-
-
+import { siteConfig } from '../siteSettings';
 
 // --- Premium Features Components ---
 
@@ -108,7 +106,7 @@ export default function AnaSayfa() {
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
               whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              href={config.whatsappLink}
+              href={siteConfig.whatsappLink}
               target="_blank" rel="noopener noreferrer"
               className="gold-gradient text-black font-extrabold px-8 py-4 rounded-xl text-lg shadow-lg"
             >
@@ -183,7 +181,7 @@ export default function AnaSayfa() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-headline font-extrabold text-center mb-4"
         >
-          Neden <span className="text-primary">EkspressPlus tv</span>?
+          Neden <span className="text-primary">{siteConfig.brandName}</span>?
         </motion.h2>
         <p className="text-center text-on-surface-variant mb-12">Premium içerik, premium kalite, premium fiyat.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -223,7 +221,7 @@ export default function AnaSayfa() {
           <p className="text-on-surface-variant mb-8 relative z-10">Taahhüt yok, gizli ücret yok. Sadece saf eğlence.</p>
           <motion.a
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-            href="https://wa.me/905397112794?text=Merhaba"
+            href={siteConfig.whatsappLink}
             target="_blank" rel="noopener noreferrer"
             className="gold-gradient text-black font-extrabold px-10 py-4 rounded-xl text-lg inline-block shadow-lg"
           >

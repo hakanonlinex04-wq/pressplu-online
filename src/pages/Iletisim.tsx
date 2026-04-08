@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { MessageCircle, Mail, Clock, MapPin, Send } from 'lucide-react';
-import { config } from '../App';
-
-
+import { siteConfig } from '../siteSettings';
 
 const contactMethods = [
   {
     icon: MessageCircle,
     title: 'WhatsApp',
     desc: '7/24 anlık destek',
-    value: config.whatsappNumber,
-    href: config.whatsappLink,
+    value: siteConfig.whatsappNumber,
+    href: siteConfig.whatsappLink,
     color: '#25D366',
     btn: 'WhatsApp\'tan Yaz',
   },
@@ -19,12 +17,11 @@ const contactMethods = [
     icon: Mail,
     title: 'E-Posta',
     desc: 'Detaylı sorularınız için',
-    value: config.contactEmail,
-    href: `mailto:${config.contactEmail}`,
+    value: siteConfig.contactEmail,
+    href: `mailto:${siteConfig.contactEmail}`,
     color: '#cba328',
     btn: 'E-Posta Gönder',
   },
-
   {
     icon: Clock,
     title: 'Çalışma Saatleri',
@@ -43,8 +40,7 @@ export default function Iletisim() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = encodeURIComponent(`Merhaba, ben ${form.name}.\nTelefon: ${form.phone}\n\n${form.message}`);
-    window.open(`https://wa.me/${config.whatsappNumber}?text=${text}`, '_blank');
-
+    window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${text}`, '_blank');
     setSent(true);
     setTimeout(() => setSent(false), 3000);
   };
@@ -63,7 +59,6 @@ export default function Iletisim() {
         </p>
       </motion.div>
 
-      {/* Contact Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         {contactMethods.map((method, i) => (
           <motion.div
@@ -98,7 +93,6 @@ export default function Iletisim() {
         ))}
       </div>
 
-      {/* Contact Form */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -153,7 +147,6 @@ export default function Iletisim() {
           </form>
         </motion.div>
 
-        {/* Info Box */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}

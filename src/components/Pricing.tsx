@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, XCircle, Star } from 'lucide-react';
-import { config } from '../App';
+import { siteConfig } from '../siteSettings';
+
 
 
 
@@ -98,7 +99,8 @@ export default function Pricing() {
             </ul>
 
             <motion.a
-              href={config.whatsappLink}
+              href={siteConfig.whatsappLink}
+
 
               target="_blank"
               rel="noopener noreferrer"

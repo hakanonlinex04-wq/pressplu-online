@@ -2,7 +2,8 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
-import { config } from '../App';
+import { siteConfig } from '../siteSettings';
+
 
 
 export default function Navbar() {
@@ -33,8 +34,9 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link to="/" className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#ffe792] via-[#ffd709] to-[#dfb73a] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,9,0.3)] flex-shrink-0 tracking-tight">
-        {config.brandName}
+        {siteConfig.brandName}
       </Link>
+
 
 
       {/* Desktop Nav Links */}
@@ -89,7 +91,8 @@ export default function Navbar() {
 
         {/* CTA Button - hidden on mobile */}
           <motion.a
-          href={config.whatsappLink}
+          href={siteConfig.whatsappLink}
+
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
