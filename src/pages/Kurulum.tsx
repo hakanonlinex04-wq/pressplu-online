@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Tv, Smartphone, Monitor, Tablet, Download, Wifi, CheckCircle, MessageCircle } from 'lucide-react';
-import { config } from '../config';
+import { config } from '../App';
+
 
 
 const devices = [

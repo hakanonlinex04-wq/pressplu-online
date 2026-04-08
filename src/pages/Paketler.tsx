@@ -1,7 +1,8 @@
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
 import { CheckCircle2, XCircle, Star, Zap, MessageCircle, Tv2, Smartphone, Users, Trophy, Loader2 } from 'lucide-react';
 import React, { useState } from 'react';
-import { config } from '../config';
+import { config } from '../App';
+
 
 
 function TiltCard({ children, className, featured }: any) {

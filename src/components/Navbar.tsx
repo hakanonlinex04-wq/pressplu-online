@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
-import { config } from '../config';
+import { config } from '../App';
 
 
 export default function Navbar() {

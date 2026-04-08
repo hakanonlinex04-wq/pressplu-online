@@ -9,8 +9,18 @@ import Footer from './components/Footer';
 import { MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
-import { config } from './config';
 
+// MERKEZİ AYARLAR (Buradan değiştirebilirsiniz)
+export const config = {
+  brandName: 'EkspressPlus TV',
+  whatsappNumber: '905397112794',
+  whatsappLink: 'https://wa.me/905397112794?text=Merhaba',
+  contactEmail: 'destek@pressplus.online',
+  socialMedia: {
+    instagram: '#',
+    telegram: '#',
+  }
+};
 
 import AnaSayfa from './pages/AnaSayfa';
 import KanalListesi from './pages/KanalListesi';
@@ -64,7 +74,6 @@ export default function App() {
           <span className="absolute right-20 bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {config.brandName} Destek - 7/24 Aktif
           </span>
-
         </motion.a>
       </div>
     </BrowserRouter>

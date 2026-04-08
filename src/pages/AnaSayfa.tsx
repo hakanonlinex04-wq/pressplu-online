@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useSpring, useTransform } from 'motion/react';
 import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { config } from '../config';
+import { config } from '../App';
+
 
 
 // --- Premium Features Components ---
