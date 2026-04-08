@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { MessageCircle, Mail, Clock, MapPin, Send } from 'lucide-react';
+import { config } from '../config';
+
 
 const contactMethods = [
   {
     icon: MessageCircle,
     title: 'WhatsApp',
     desc: '7/24 anlık destek',
-    value: '+90 539 711 27 94',
-    href: 'https://wa.me/905397112794?text=Merhaba',
+    value: config.whatsappNumber,
+    href: config.whatsappLink,
     color: '#25D366',
     btn: 'WhatsApp\'tan Yaz',
   },
@@ -16,11 +16,12 @@ const contactMethods = [
     icon: Mail,
     title: 'E-Posta',
     desc: 'Detaylı sorularınız için',
-    value: 'destek@ekspressplus.tv',
-    href: 'mailto:destek@ekspressplus.tv',
+    value: config.contactEmail,
+    href: `mailto:${config.contactEmail}`,
     color: '#cba328',
     btn: 'E-Posta Gönder',
   },
+
   {
     icon: Clock,
     title: 'Çalışma Saatleri',
@@ -39,7 +40,8 @@ export default function Iletisim() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = encodeURIComponent(`Merhaba, ben ${form.name}.\nTelefon: ${form.phone}\n\n${form.message}`);
-    window.open(`https://wa.me/905397112794?text=${text}`, '_blank');
+    window.open(`https://wa.me/${config.whatsappNumber}?text=${text}`, '_blank');
+
     setSent(true);
     setTimeout(() => setSent(false), 3000);
   };

@@ -1,5 +1,6 @@
-import { motion } from 'motion/react';
 import { CheckCircle2, XCircle, Star } from 'lucide-react';
+import { config } from '../config';
+
 
 const plans = [
   {
@@ -95,7 +96,8 @@ export default function Pricing() {
             </ul>
 
             <motion.a
-              href="https://wa.me/905397112794?text=Merhaba"
+              href={config.whatsappLink}
+
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}

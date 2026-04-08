@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
 import { Search, Globe, Trophy, Film, Music, Newspaper, Baby, Tv } from 'lucide-react';
 import { useState } from 'react';
+import { config } from '../config';
+
 
 const categories = [
   { icon: Trophy, label: 'Spor', color: '#ef4444' },
@@ -134,12 +135,13 @@ export default function KanalListesi() {
       >
         <p className="text-on-surface-variant mb-4 text-lg">Bu sadece bir önizlemedir. <strong className="text-on-surface">1200+</strong> kanalın tamamına erişmek için hemen başlayın!</p>
         <a
-          href="https://wa.me/905397112794?text=Merhaba"
+          href={config.whatsappLink}
           target="_blank" rel="noopener noreferrer"
           className="gold-gradient text-black font-extrabold px-8 py-3 rounded-xl inline-block"
         >
           Tüm Kanallara Eriş →
         </a>
+
       </motion.div>
     </div>
   );

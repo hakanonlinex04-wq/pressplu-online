@@ -1,6 +1,6 @@
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'motion/react';
-import { CheckCircle2, XCircle, Star, Zap, MessageCircle, Tv2, Smartphone, Users, Trophy, Loader2 } from 'lucide-react';
 import React, { useState } from 'react';
+import { config } from '../config';
+
 
 function TiltCard({ children, className, featured }: any) {
   const x = useMotionValue(0);
@@ -258,7 +258,7 @@ export default function Paketler() {
               </ul>
 
               <motion.a
-                href="https://wa.me/905397112794?text=Merhaba"
+                href={config.whatsappLink}
                 target="_blank" rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                 className={`w-full py-4 rounded-xl font-extrabold transition-all text-center block ${

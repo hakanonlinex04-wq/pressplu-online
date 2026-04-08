@@ -2,6 +2,8 @@ import { motion } from 'motion/react';
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
+import { config } from '../config';
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,8 +33,9 @@ export default function Navbar() {
     >
       {/* Logo */}
       <Link to="/" className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#ffe792] via-[#ffd709] to-[#dfb73a] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,215,9,0.3)] flex-shrink-0 tracking-tight">
-        EkspressPlus TV
+        {config.brandName}
       </Link>
+
 
       {/* Desktop Nav Links */}
       <div className="hidden md:flex items-center gap-8">
@@ -85,8 +88,8 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button - hidden on mobile */}
-        <motion.a
-          href="https://wa.me/905397112794?text=Merhaba"
+          <motion.a
+          href={config.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -95,6 +98,7 @@ export default function Navbar() {
         >
           Ücretsiz Test Al
         </motion.a>
+
 
         {/* Hamburger Menu (Mobile) */}
         <button

@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { motion, useInView, useSpring, useTransform } from 'motion/react';
 import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { config } from '../config';
+
 
 // --- Premium Features Components ---
 
@@ -105,7 +107,7 @@ export default function AnaSayfa() {
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
               whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              href="https://wa.me/905397112794?text=Merhaba"
+              href={config.whatsappLink}
               target="_blank" rel="noopener noreferrer"
               className="gold-gradient text-black font-extrabold px-8 py-4 rounded-xl text-lg shadow-lg"
             >
