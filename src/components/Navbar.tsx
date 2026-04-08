@@ -1,4 +1,5 @@
-import { motion } from 'motion';
+import { motion } from 'motion/react';
+
 
 import { useState } from 'react';
 import { Menu, X, Globe } from 'lucide-react';

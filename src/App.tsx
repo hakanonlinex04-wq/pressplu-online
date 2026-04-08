@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
-import { motion } from 'motion';
+import { motion } from 'motion/react';
+
 import { siteConfig } from './siteSettings';
 
 // Components

@@ -1,4 +1,5 @@
-import { motion } from 'motion';
+import { motion } from 'motion/react';
+
 
 import { CheckCircle2, XCircle, Star } from 'lucide-react';
 import { siteConfig } from '../siteSettings';

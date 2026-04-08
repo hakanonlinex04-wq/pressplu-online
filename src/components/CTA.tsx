@@ -1,4 +1,5 @@
-import { motion } from 'motion';
+import { motion } from 'motion/react';
+
 
 import { Bolt, Mail, MessageCircle, HelpCircle } from 'lucide-react';
 

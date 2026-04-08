@@ -1,4 +1,5 @@
-import { motion } from 'motion';
+import { motion } from 'motion/react';
+
 
 import { Tv, Smartphone, Monitor, Tablet, Download, Wifi, CheckCircle, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../siteSettings';
