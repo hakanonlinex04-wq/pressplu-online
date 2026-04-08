@@ -133,10 +133,11 @@ export default function Navbar() {
             </NavLink>
           ))}
           <a
-            href="https://wa.me/905397112794?text=Merhaba"
+            href={siteConfig.whatsappLink}
             target="_blank" rel="noopener noreferrer"
             className="mt-2 gold-gradient text-black px-6 py-3 rounded-lg font-bold text-center"
           >
+
             Ücretsiz Test Al
           </a>
         </motion.div>
