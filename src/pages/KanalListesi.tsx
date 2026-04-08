@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { Search, Globe, Trophy, Film, Music, Newspaper, Baby, Tv } from 'lucide-react';
 import { useState } from 'react';
 import { config } from '../config';

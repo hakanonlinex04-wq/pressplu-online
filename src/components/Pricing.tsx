@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { CheckCircle2, XCircle, Star } from 'lucide-react';
 import { config } from '../config';
 

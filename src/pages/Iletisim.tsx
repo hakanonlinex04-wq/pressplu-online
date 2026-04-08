@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { MessageCircle, Mail, Clock, MapPin, Send } from 'lucide-react';
 import { config } from '../config';
 
