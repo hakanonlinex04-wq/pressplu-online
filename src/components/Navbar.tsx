@@ -35,7 +35,7 @@ export default function Navbar() {
       className="fixed top-0 w-full z-50 glass-overlay shadow-[0_4px_30px_rgba(0,0,0,0.1)] flex justify-between items-center px-8 py-4 max-w-full font-headline tracking-tight"
     >
       {/* Logo */}
-      <Link to="/" className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#60a5fa] via-[#3b82f6] to-[#06b6d4] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(59,130,246,0.3)] flex-shrink-0 tracking-tight">
+      <Link to="/" className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-[#ff3333] via-[#e50914] to-[#b81d24] bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(229,9,20,0.3)] flex-shrink-0 tracking-tight">
         {siteConfig.brandName}
       </Link>
 

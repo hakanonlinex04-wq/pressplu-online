@@ -19,21 +19,21 @@
 }
 
 :root {
-  /* Ultra Premium Space Navy VIP Theme (Disney+) */
-  --bg-color: #040914;
-  --primary-color: #3b82f6;
-  --primary-container-color: #1d4ed8;
-  --surface-color: #0b1120;
-  --surface-low: #111827;
-  --surface-high: #1e293b;
-  --surface-highest: #334155;
+  /* Ultra Premium Cinematic Theme (Netflix Red) */
+  --bg-color: #000000;
+  --primary-color: #e50914;
+  --primary-container-color: #b81d24;
+  --surface-color: #141414;
+  --surface-low: #181818;
+  --surface-high: #222222;
+  --surface-highest: #2b2b2b;
   --text-color: #ffffff;
-  --text-variant: #94a3b8;
-  --outline-color: #1e293b;
-  --tertiary-color: #06b6d4;
+  --text-variant: #b3b3b3;
+  --outline-color: #333333;
+  --tertiary-color: #ff3333;
   
-  --glass-bg: rgba(11, 17, 32, 0.75);
-  --glass-border: rgba(59, 130, 246, 0.15);
+  --glass-bg: rgba(20, 20, 20, 0.85);
+  --glass-border: rgba(229, 9, 20, 0.15);
 }
 
 @layer base {
@@ -55,8 +55,8 @@
 }
 
 .gold-gradient {
-  /* Brand Blue Cyber Gradient */
-  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 22%, #2563eb 50%, #3b82f6 100%);
+  /* Netflix Crimson Gradient - Kept classname gold-gradient to avoid refactoring markup */
+  background: linear-gradient(135deg, #ff3333 0%, #e50914 30%, #b81d24 70%, #ff3333 100%);
   background-size: 200% auto;
   transition: 0.5s;
 }
