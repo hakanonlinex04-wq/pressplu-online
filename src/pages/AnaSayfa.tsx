@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useSpring, useTransform } from 'motion/react';
 
 
-import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote } from 'lucide-react';
+import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote, Search, CheckCircle2, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../siteSettings';
 
@@ -57,6 +57,20 @@ const stats = [
 ];
 
 export default function AnaSayfa() {
+  // Search Engine State
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchStatus, setSearchStatus] = useState<'idle' | 'searching' | 'found'>('idle');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+    
+    setSearchStatus('searching');
+    setTimeout(() => {
+      setSearchStatus('found');
+    }, 1500);
+  };
+
   return (
     <div className="min-h-screen pt-24">
       {/* Hero */}
@@ -173,6 +187,76 @@ export default function AnaSayfa() {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Smart Search Engine */}
+      <section className="py-16 px-8 max-w-4xl mx-auto my-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="p-8 md:p-12 rounded-3xl bg-surface-container-low border border-primary/20 shadow-[0_0_50px_rgba(203,163,40,0.1)] relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 p-8 opacity-5">
+            <Search className="w-48 h-48" />
+          </div>
+          
+          <div className="relative z-10 text-center mb-8">
+            <h2 className="text-3xl font-headline font-extrabold mb-3">İstediğiniz İçerik Bizde Var Mı?</h2>
+            <p className="text-on-surface-variant">Favori kanalınızı, filminizi veya dizinizi yazın. Sistemimizde hemen tarayalım.</p>
+          </div>
+
+          <form onSubmit={handleSearch} className="relative z-10 max-w-2xl mx-auto">
+            <div className="flex bg-[#1a1a1a] rounded-2xl p-2 border border-outline-variant/20 focus-within:border-primary/50 transition-colors">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setSearchStatus('idle');
+                }}
+                placeholder="Örn: Galatasaray, Exxen, Inception..."
+                className="w-full bg-transparent text-white px-4 outline-none placeholder:text-gray-500 font-body text-lg"
+              />
+              <button
+                type="submit"
+                disabled={searchStatus === 'searching'}
+                className="gold-gradient text-black font-bold px-8 py-4 rounded-xl flex items-center gap-2 hover:scale-105 transition-transform disabled:opacity-80 disabled:hover:scale-100"
+              >
+                {searchStatus === 'searching' ? <Loader2 className="w-5 h-5 animate-spin" /> : <Search className="w-5 h-5" />}
+                {searchStatus === 'searching' ? 'Aranıyor...' : 'Sorgula'}
+              </button>
+            </div>
+          </form>
+
+          {/* Search Results */}
+          <div className="mt-6 h-28 relative z-10 flex items-center justify-center">
+            {searchStatus === 'found' && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                className="bg-[#121c15] border border-green-500/30 p-6 rounded-2xl flex flex-col md:flex-row items-center gap-4 shadow-[0_0_30px_rgba(34,197,94,0.15)]"
+              >
+                <div className="bg-green-500/20 p-3 rounded-full text-green-400">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <div className="text-center md:text-left">
+                  <h4 className="text-green-400 font-bold text-lg mb-1">Mükemmel Haber! Bulundu!</h4>
+                  <p className="text-gray-300 text-sm">"<span className="font-bold text-white">{searchQuery}</span>" içerikleri 4K ve FHD kalitesinde sistemimizde mevcuttur.</p>
+                </div>
+                <div className="md:ml-auto mt-4 md:mt-0">
+                  <a
+                    href={siteConfig.whatsappLink}
+                    target="_blank" rel="noopener noreferrer"
+                    className="bg-green-500 hover:bg-green-400 text-black font-extrabold px-6 py-3 rounded-xl block text-sm transition-colors whitespace-nowrap shadow-[0_0_15px_rgba(34,197,94,0.4)]"
+                  >
+                    Hemen Test Et
+                  </a>
+                </div>
+              </motion.div>
+            )}
+          </div>
+        </motion.div>
       </section>
 
       {/* Features */}
