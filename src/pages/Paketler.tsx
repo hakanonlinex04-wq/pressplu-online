@@ -55,7 +55,7 @@ const plans = [
   {
     name: "3 Aylık Paket",
     description: "Başlangıç seviyesi eğlence",
-    price: "375",
+    price: "600",
     period: "/ 3 Ay",
     badge: null,
     features: [
@@ -72,7 +72,7 @@ const plans = [
   {
     name: "1 Yıllık Full Paket",
     description: "Eksiksiz cinematic deneyim",
-    price: "975",
+    price: "1500",
     period: "/ 12 Ay",
     badge: "⭐ En Çok Tercih Edilen",
     features: [
@@ -89,7 +89,7 @@ const plans = [
   {
     name: "6 Aylık Paket",
     description: "Dengeli eğlence süresi",
-    price: "675",
+    price: "1000",
     period: "/ 6 Ay",
     badge: "🔥 Popüler Seçim",
     features: [
