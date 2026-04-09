@@ -19,31 +19,50 @@
 }
 
 :root {
-  /* Permanent Cinematic Dark Theme */
-  --bg-color: #0e0e0e;
-  --primary-color: #ffe792;
-  --primary-container-color: #ffd709;
-  --surface-color: #0e0e0e;
-  --surface-low: #131313;
-  --surface-high: #201f1f;
-  --surface-highest: #262626;
+  /* Ultra Premium Onyx VIP Theme */
+  --bg-color: #050505;
+  --primary-color: #f9d976;
+  --primary-container-color: #e1b93f;
+  --surface-color: #0a0a0a;
+  --surface-low: #0f0f0f;
+  --surface-high: #141414;
+  --surface-highest: #1a1a1a;
   --text-color: #ffffff;
-  --text-variant: #adaaaa;
-  --outline-color: #484847;
-  --tertiary-color: #def76f;
+  --text-variant: #a0a0a0;
+  --outline-color: #333333;
+  --tertiary-color: #eadd69;
   
-  --glass-bg: rgba(32, 31, 31, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(10, 10, 10, 0.75);
+  --glass-border: rgba(249, 217, 118, 0.08);
 }
 
 @layer base {
   body {
     @apply bg-background text-on-surface font-body;
+    position: relative;
+  }
+  
+  /* Cinematic Noise Overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.04;
+    z-index: 9999;
   }
 }
 
 .gold-gradient {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-container-color) 100%);
+  /* Metallic 4-Stop Champagne Gold Glow */
+  background: linear-gradient(135deg, #f9d976 0%, #eadd69 22%, #e1b93f 50%, #f9d976 100%);
+  background-size: 200% auto;
+  transition: 0.5s;
+}
+
+.gold-gradient:hover {
+  background-position: right center;
 }
 
 .glass-overlay {
