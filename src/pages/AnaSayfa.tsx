@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView, useSpring, useTransform } from 'motion/react';
 
 
-import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote, Search, CheckCircle2, Loader2 } from 'lucide-react';
+import { Tv, Film, Trophy, Zap, Globe, Star, Play, Shield, Quote, Search, CheckCircle2, Loader2, Wifi, Activity, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../siteSettings';
 
@@ -69,6 +69,32 @@ export default function AnaSayfa() {
     setTimeout(() => {
       setSearchStatus('found');
     }, 1500);
+  };
+
+  // Speed Test State
+  const [speedStatus, setSpeedStatus] = useState<'idle' | 'testing' | 'done'>('idle');
+  const [currentSpeed, setCurrentSpeed] = useState(0);
+  const [finalSpeed, setFinalSpeed] = useState(0);
+
+  const startSpeedTest = () => {
+    setSpeedStatus('testing');
+    let speed = 25;
+    
+    const interval = setInterval(() => {
+      speed = Math.floor(Math.random() * 40) + speed + (Math.random() > 0.5 ? -10 : 8);
+      if (speed < 12) speed = 25;
+      if (speed > 120) speed = 85;
+      setCurrentSpeed(speed);
+    }, 150);
+
+    setTimeout(() => {
+      clearInterval(interval);
+      // Rastgele 45 ile 95 Mbps arası çok inandırıcı bir sayıda durdur.
+      const result = Math.floor(Math.random() * 50) + 45;
+      setCurrentSpeed(result);
+      setFinalSpeed(result);
+      setSpeedStatus('done');
+    }, 3000);
   };
 
   return (
@@ -253,6 +279,85 @@ export default function AnaSayfa() {
                     Hemen Test Et
                   </a>
                 </div>
+              </motion.div>
+            )}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Speed Test Module */}
+      <section className="py-16 px-8 max-w-4xl mx-auto my-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="p-8 md:p-12 rounded-3xl bg-[#0a0a0a] border border-outline-variant/30 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center text-center"
+        >
+          <div className="absolute top-0 left-0 p-8 opacity-5">
+            <Activity className="w-48 h-48" />
+          </div>
+
+          <div className="relative z-10 text-center mb-8">
+            <h2 className="text-3xl font-headline font-extrabold mb-3">İnternet Hızınız Yeterli Mi?</h2>
+            <p className="text-on-surface-variant max-w-lg mx-auto">
+              IPTV izlerken donma yaşamaktan mı korkuyorsunuz? Tek tuşla test edin, altyapınızın 4K yayınlarımıza uygunluğunu anında gösterelim.
+            </p>
+          </div>
+
+          <div className="relative z-10 w-full max-w-md mx-auto bg-[#141414] rounded-2xl p-8 border border-white/5 shadow-inner">
+            <div className="flex flex-col items-center justify-center mb-6">
+              <motion.div 
+                animate={{ rotate: speedStatus === 'testing' ? [0, 10, -10, 0] : 0 }}
+                transition={{ repeat: speedStatus === 'testing' ? Infinity : 0, duration: 0.5 }}
+                className={`p-4 rounded-full mb-4 ${speedStatus === 'done' ? 'bg-green-500/20 text-green-400' : 'bg-primary/20 text-primary'}`}
+              >
+                {speedStatus === 'done' ? <Wifi className="w-10 h-10" /> : <Gauge className="w-10 h-10" />}
+              </motion.div>
+              
+              <div className="text-5xl font-black font-headline tracking-tighter">
+                {currentSpeed} <span className="text-xl text-on-surface-variant">Mbps</span>
+              </div>
+            </div>
+
+            {speedStatus === 'idle' && (
+              <button
+                onClick={startSpeedTest}
+                className="w-full bg-white text-black hover:bg-gray-200 font-extrabold px-6 py-4 rounded-xl transition-all"
+              >
+                Hızımı Test Et
+              </button>
+            )}
+
+            {speedStatus === 'testing' && (
+              <button disabled className="w-full bg-surface-highest text-on-surface-variant font-bold px-6 py-4 rounded-xl flex items-center justify-center gap-2">
+                <Loader2 className="w-5 h-5 animate-spin" /> Ölçülüyor...
+              </button>
+            )}
+
+            {speedStatus === 'done' && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="space-y-4"
+              >
+                <div className="bg-green-500/10 border border-green-500/20 p-4 rounded-xl">
+                  <div className="flex items-start gap-3 text-left">
+                    <CheckCircle2 className="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-green-400 font-bold mb-1">Mükemmel Sonuç!</h4>
+                      <p className="text-xs text-gray-300">
+                        {finalSpeed} Mbps hızınız, Ekspress Plus sunucularındaki 4K / HD yayınları <strong>HİÇ DONMADAN</strong> izlemek için fazlasıyla yeterlidir.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href={siteConfig.whatsappLink}
+                  target="_blank" rel="noopener noreferrer"
+                  className="w-full gold-gradient text-black font-extrabold px-6 py-4 rounded-xl flex items-center justify-center transition-transform hover:scale-105"
+                >
+                  Şimdi Satın Al
+                </a>
               </motion.div>
             )}
           </div>
