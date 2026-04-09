@@ -43,7 +43,7 @@ export default function App() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           whileHover={{ scale: 1.1 }}
-          className="fixed bottom-28 right-4 md:right-6 z-[100] bg-[#201f1f] text-[#ffe792] rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:bg-[#25D366] hover:text-white transition-all group"
+          className="fixed bottom-28 right-4 md:right-6 z-[100] bg-[#201f1f] text-[#3b82f6] rounded-full w-14 h-14 md:w-16 md:h-16 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:bg-[#3b82f6] hover:text-white transition-all group"
           href={siteConfig.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"

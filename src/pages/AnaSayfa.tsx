@@ -123,7 +123,7 @@ export default function AnaSayfa() {
             className="hidden lg:block w-[280px] xl:w-[350px] h-[380px] xl:h-[480px] relative flex-shrink-0 z-20 -mt-10"
           >
             <div className="absolute inset-0 bg-primary/30 blur-[60px] rounded-full mix-blend-screen"></div>
-            <img src="/floating-left.png" alt="Premium Sports TV" className="w-full h-full object-cover rounded-3xl border-[3px] border-primary/30 shadow-[0_0_60px_rgba(203,163,40,0.4)] -rotate-6 relative z-10 transform-gpu" />
+            <img src="/floating-left.png" alt="Premium Sports TV" className="w-full h-full object-cover rounded-3xl border-[3px] border-primary/30 shadow-[0_0_60px_rgba(59,130,246,0.4)] -rotate-6 relative z-10 transform-gpu" />
           </motion.div>
 
           {/* Center Text Body */}
@@ -168,12 +168,12 @@ export default function AnaSayfa() {
           {/* Right Floating Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0, y: [0, 20, 0] }}
-            transition={{ y: { duration: 5, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: 0.8 }, x: { duration: 1 } }}
+            animate={{ opacity: 1, x: 0, y: [0, 25, 0] }}
+            transition={{ y: { duration: 7, repeat: Infinity, ease: "easeInOut" }, opacity: { duration: 0.8 }, x: { duration: 1 } }}
             className="hidden lg:block w-[280px] xl:w-[350px] h-[380px] xl:h-[480px] relative flex-shrink-0 z-20 mt-10"
           >
             <div className="absolute inset-0 bg-primary/30 blur-[60px] rounded-full mix-blend-screen"></div>
-            <img src="/floating-right.png" alt="Premium Movies Mobile" className="w-full h-full object-cover rounded-3xl border-[3px] border-primary/30 shadow-[0_0_60px_rgba(203,163,40,0.4)] rotate-6 relative z-10 transform-gpu" />
+            <img src="/floating-right.png" alt="4K Movies & Series" className="w-full h-full object-cover rounded-3xl border-[3px] border-primary/30 shadow-[0_0_60px_rgba(59,130,246,0.4)] rotate-6 relative z-10 transform-gpu" />
           </motion.div>
 
         </motion.div>
@@ -221,7 +221,7 @@ export default function AnaSayfa() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="p-8 md:p-12 rounded-3xl bg-surface-container-low border border-primary/20 shadow-[0_0_50px_rgba(203,163,40,0.1)] relative overflow-hidden"
+          className="p-8 md:p-12 rounded-3xl bg-surface-container-low border border-primary/20 shadow-[0_0_50px_rgba(59,130,246,0.1)] relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 p-8 opacity-5">
             <Search className="w-48 h-48" />

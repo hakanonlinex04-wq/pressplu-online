@@ -19,21 +19,21 @@
 }
 
 :root {
-  /* Ultra Premium Onyx VIP Theme */
-  --bg-color: #050505;
-  --primary-color: #f9d976;
-  --primary-container-color: #e1b93f;
-  --surface-color: #0a0a0a;
-  --surface-low: #0f0f0f;
-  --surface-high: #141414;
-  --surface-highest: #1a1a1a;
+  /* Ultra Premium Space Navy VIP Theme (Disney+) */
+  --bg-color: #040914;
+  --primary-color: #3b82f6;
+  --primary-container-color: #1d4ed8;
+  --surface-color: #0b1120;
+  --surface-low: #111827;
+  --surface-high: #1e293b;
+  --surface-highest: #334155;
   --text-color: #ffffff;
-  --text-variant: #a0a0a0;
-  --outline-color: #333333;
-  --tertiary-color: #eadd69;
+  --text-variant: #94a3b8;
+  --outline-color: #1e293b;
+  --tertiary-color: #06b6d4;
   
-  --glass-bg: rgba(10, 10, 10, 0.75);
-  --glass-border: rgba(249, 217, 118, 0.08);
+  --glass-bg: rgba(11, 17, 32, 0.75);
+  --glass-border: rgba(59, 130, 246, 0.15);
 }
 
 @layer base {
@@ -55,8 +55,8 @@
 }
 
 .gold-gradient {
-  /* Metallic 4-Stop Champagne Gold Glow */
-  background: linear-gradient(135deg, #f9d976 0%, #eadd69 22%, #e1b93f 50%, #f9d976 100%);
+  /* Brand Blue Cyber Gradient */
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 22%, #2563eb 50%, #3b82f6 100%);
   background-size: 200% auto;
   transition: 0.5s;
 }
