@@ -7,6 +7,8 @@ import { siteConfig } from './siteSettings';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+
 
 // Pages
 import AnaSayfa from './pages/AnaSayfa';
@@ -18,6 +20,7 @@ import Iletisim from './pages/Iletisim';
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-[#0e0e0e] text-white selection:bg-[#ffe792] selection:text-black flex flex-col">
         <Navbar />
         
