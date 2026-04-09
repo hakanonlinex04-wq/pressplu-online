@@ -22,6 +22,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      
+      {/* --- PARALLAX BACKGROUND EMBLEM (SILHOUETTE) --- */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden flex items-center justify-center opacity-[0.04] grayscale">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/tr/e/ee/S%C3%BCper_Lig_logo.png" 
+          alt="Background Logo" 
+          className="w-[120%] h-[120%] object-contain scale-150 blur-xl opacity-80"
+        />
+      </div>
+
       <div className="min-h-screen bg-[#0e0e0e] text-white selection:bg-[#ffe792] selection:text-black flex flex-col">
         <Navbar />
         
